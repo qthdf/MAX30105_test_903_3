@@ -146,7 +146,7 @@ static const char MAX_30105_EXPECTEDPARTID = 0x15;
 
 uint8_t activeDiodes = 3; //Gets set during setup. Allows check() to calculate how many bytes to read from FIFO
 
-#define STORAGE_SIZE 4 //Each long is 4 bytes so limit this to fit on your micro
+#define STORAGE_SIZE 25 //Each long is 4 bytes so limit this to fit on your micro
 
 int16_t IR_AC_Max = 20;
 int16_t IR_AC_Min = -20;
