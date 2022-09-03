@@ -99,6 +99,8 @@ namespace Microbit {
 	int16_t heartbeat(uint8_t type)
 	{
 		uint8_t myBeat;
+		particleSensor->setPulseAmplitudeRed(0x0A); 
+  		particleSensor->setPulseAmplitudeGreen(0); 
 		particleSensor->safeCheck(100);
 		do
 		{
