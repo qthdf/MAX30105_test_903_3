@@ -21,23 +21,23 @@
 
 enum LEDToRead{
 	//% block="Red" enumval=1
-	Red=1,	
+	红光=1,	
 	//% block="Infrared" enumval=2
-	Infrared=2,
+	红外线=2,
 };
  
 enum HeartbeatType{
 	//% block="BPM" enumval=0
-	BPM=0,
+	瞬时心率=0,
 	//% block="AVG" enumval=1
-	AVG=1,
+	平均心率=1,
 };
 
 enum LEDMode{
 	//% block="Red" enumval=2
-	RedLED=2,
+	红光=2,
 	//% block="Red & Infrared" enumval=3
-	RedAndIR=3,
+	红光和红外线=3,
 };
 
 using namespace pxt;
