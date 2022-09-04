@@ -37,7 +37,7 @@ enum LEDMode{
 	//% block="Red" enumval=2
 	红光=2,
 	//% block="Red & Infrared" enumval=3
-	红光和红外线=3,
+	红光和红外光=3,
 };
 
 using namespace pxt;
