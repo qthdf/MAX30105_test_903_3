@@ -18,25 +18,25 @@
 
     declare const enum LEDToRead {
     //% block="红光" enumval=1
-    红光 = 1,
+     Red = 1,
     //% block="红外线" enumval=2
-    红外线 = 2,
+    Infrared = 2,
     }
 
 
     declare const enum HeartbeatType {
     //% block="瞬时心率" enumval=0
-    瞬时心率 = 0,
+    BPM = 0,
     //% block="平均心率" enumval=1
-    平均心率 = 1,
+    AVG = 1,
     }
 
 
     declare const enum LEDMode {
     //% block="红光" enumval=2
-    红光 = 2,
+    RedLED = 2,
     //% block="红光和红外光" enumval=3
-    红光和红外光 = 3,
+    RedAndIR = 3,
     }
 
 // Auto-generated. Do not edit. Really.
