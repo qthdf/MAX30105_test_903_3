@@ -125,20 +125,8 @@ class MAX30105 {
   int16_t averageDCEstimator(int32_t *p, uint16_t x);
   int16_t lowPassFIRFilter(int16_t din);
   int32_t mul16(int16_t x, int16_t y);
-
-  
-  // Low-level I2C communication
-  uint8_t readRegister8(uint8_t address, uint8_t reg);
-  void writeRegister8(uint8_t address, uint8_t reg, uint8_t value);
-
-  int16_t getPlaceholder();
- private:
-  //activeDiodes is the number of channels turned on, and can be 1 to 3. 2 is common for Red+IR.
-  
-  uint8_t revisionID; 
-
-  void readRevisionID();
-
+ 
+ 
   void bitMask(uint8_t reg, uint8_t mask, uint8_t thing);
 
   void maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint16_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid,
@@ -148,4 +136,19 @@ class MAX30105 {
   void maxim_remove_close_peaks(int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x, int32_t n_min_distance);
   void maxim_sort_ascend(int32_t  *pn_x, int32_t n_size);
   void maxim_sort_indices_descend(int32_t  *pn_x, int32_t *pn_indx, int32_t n_size);
+
+  
+  // Low-level I2C communication
+  uint8_t readRegister8(uint8_t address, uint8_t reg);
+  void writeRegister8(uint8_t address, uint8_t reg, uint8_t value);
+
+  int16_t getPlaceholder();
+  void readRevisionID();
+
+ private:
+  //activeDiodes is the number of channels turned on, and can be 1 to 3. 2 is common for Red+IR.
+  
+  uint8_t revisionID; 
+
+  
 };
