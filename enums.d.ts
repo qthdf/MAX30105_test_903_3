@@ -30,6 +30,15 @@
     //% block="平均心率" enumval=1
     AVG = 1,
     }
+    
+    
+    
+    declare const enum Spo2Type {
+    //% block="瞬时血氧" enumval=0
+    S1 = 0,
+    //% block="平均血氧" enumval=1
+    SVG = 1,
+    }
 
 
     declare const enum LEDMode {
