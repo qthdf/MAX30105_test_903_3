@@ -750,7 +750,7 @@ void MAX30105::writeRegister8(uint8_t address, uint8_t reg, uint8_t value) {
 }
 
 
-void maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint16_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid, 
+void MAX30105:: maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint16_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid, 
                 int32_t *pn_heart_rate, int8_t *pch_hr_valid)
 
 
@@ -895,7 +895,7 @@ void maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_i
   }
 }
 
-void maxim_find_peaks( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, int32_t n_min_height, int32_t n_min_distance, int32_t n_max_num )
+void MAX30105:: maxim_find_peaks( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, int32_t n_min_height, int32_t n_min_distance, int32_t n_max_num )
 /**
 * \brief        Find peaks
 * \par          Details
@@ -909,7 +909,7 @@ void maxim_find_peaks( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32
   *n_npks = min( *n_npks, n_max_num );
 }
 
-void maxim_peaks_above_min_height( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, int32_t n_min_height )
+void MAX30105:: maxim_peaks_above_min_height( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, int32_t n_min_height )
 /**
 * \brief        Find peaks above n_min_height
 * \par          Details
@@ -939,7 +939,7 @@ void maxim_peaks_above_min_height( int32_t *pn_locs, int32_t *n_npks,  int32_t  
   }
 }
 
-void maxim_remove_close_peaks(int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x, int32_t n_min_distance)
+void MAX30105:: maxim_remove_close_peaks(int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x, int32_t n_min_distance)
 /**
 * \brief        Remove peaks
 * \par          Details
@@ -968,7 +968,7 @@ void maxim_remove_close_peaks(int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x,
   maxim_sort_ascend( pn_locs, *pn_npks );
 }
 
-void maxim_sort_ascend(int32_t  *pn_x, int32_t n_size) 
+void MAX30105:: maxim_sort_ascend(int32_t  *pn_x, int32_t n_size) 
 /**
 * \brief        Sort array
 * \par          Details
@@ -986,7 +986,7 @@ void maxim_sort_ascend(int32_t  *pn_x, int32_t n_size)
   }
 }
 
-void maxim_sort_indices_descend(  int32_t  *pn_x, int32_t *pn_indx, int32_t n_size)
+void MAX30105:: maxim_sort_indices_descend(  int32_t  *pn_x, int32_t *pn_indx, int32_t n_size)
 /**
 * \brief        Sort indices
 * \par          Details
