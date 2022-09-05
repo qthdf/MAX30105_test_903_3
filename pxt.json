@@ -12,7 +12,7 @@
         "main.ts",
         "README.md",
         "_locales/zh-CN/README.md",
-        "heart.cpp",
+        "heart1.cpp",
         "MAX30105.cpp",
         "MAX30105.h",
         "shims.d.ts",
