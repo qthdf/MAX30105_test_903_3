@@ -18,31 +18,35 @@
 #include <cstdint>
 #include <math.h>
 #include "MAX30105.h"
-enum LEDToRead{
-	//% block="Red" enumval=1
-	Red=1,	
-	//% block="Infrared" enumval=2
-	Infrared=2,
-};
- 
-enum HeartbeatType{
-	//% block="BPM" enumval=0
-	BPM=0,
-	//% block="AVG" enumval=1
-	AVG=1,
-};
+enum LEDToRead {
+    //% block="红光" enumval=1
+     Red = 1,
+    //% block="红外线" enumval=2
+    Infrared = 2,
+    }
 
-enum LEDMode{
-	//% block="Red" enumval=2
-	RedLED=2,
-	//% block="Red & Infrared" enumval=3
-	RedAndIR=3,
-};
+
+enum HeartbeatType {
+    //% block="瞬时心率" enumval=0
+    BPM = 0,
+    //% block="平均心率" enumval=1
+    AVG = 1,
+    }
+    
+    
+    
 enum Spo2Type {
     //% block="瞬时血氧" enumval=0
-    S1 = 0,
+    SMP = 0,
     //% block="平均血氧" enumval=1
     SVG = 1,
+    }
+
+enum LEDMode {
+    //% block="红光" enumval=2
+    RedLED = 2,
+    //% block="红光和红外光" enumval=3
+    RedAndIR = 3,
     }
 
 using namespace pxt;
