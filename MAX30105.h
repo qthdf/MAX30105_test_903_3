@@ -23,13 +23,12 @@
 
 //The catch-all default is 32
 #define I2C_BUFFER_LENGTH 32
-  #define FreqS 25    //sampling frequency
-  #define BUFFER_SIZE (FreqS * 4) 
-  #define MA4_SIZE 4 // DONOT CHANGE
-  //#define min(x,y) ((x) < (y) ? (x) : (y)) //Defined in Arduino.h
-
-  //uch_spo2_table is approximated as  -45.060*ratioAverage* ratioAverage + 30.354 *ratioAverage + 94.845 ;
-  const uint8_t uch_spo2_table[184]={ 95, 95, 95, 96, 96, 96, 97, 97, 97, 97, 97, 98, 98, 98, 98, 98, 99, 99, 99, 99, 
+#define FreqS 25    //sampling frequency
+#define BUFFER_SIZE (FreqS * 4) 
+#define MA4_SIZE 4 // DONOT CHANGE
+//#define min(x,y) ((x) < (y) ? (x) : (y)) //Defined in Arduino.h
+//uch_spo2_table is approximated as  -45.060*ratioAverage* ratioAverage + 30.354 *ratioAverage + 94.845 ;
+const uint8_t uch_spo2_table[184]={ 95, 95, 95, 96, 96, 96, 97, 97, 97, 97, 97, 98, 98, 98, 98, 98, 99, 99, 99, 99, 
                 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 
                 100, 100, 100, 100, 99, 99, 99, 99, 99, 99, 99, 99, 98, 98, 98, 98, 98, 98, 97, 97, 
                 97, 97, 96, 96, 96, 96, 95, 95, 95, 94, 94, 94, 93, 93, 93, 92, 92, 92, 91, 91, 
@@ -39,8 +38,8 @@
                 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 31, 30, 29, 
                 28, 27, 26, 25, 23, 22, 21, 20, 19, 17, 16, 15, 14, 12, 11, 10, 9, 7, 6, 5, 
                 3, 2, 1 } ;
-  static  int32_t an_x[ BUFFER_SIZE]; //ir
-  static  int32_t an_y[ BUFFER_SIZE]; //red
+static  int32_t an_x[ BUFFER_SIZE]; //ir
+static  int32_t an_y[ BUFFER_SIZE]; //red
 
 class MAX30105 {
  public: 
