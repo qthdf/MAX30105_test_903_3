@@ -38,6 +38,12 @@ enum LEDMode{
 	//% block="Red & Infrared" enumval=3
 	RedAndIR=3,
 };
+enum Spo2Type {
+    //% block="瞬时血氧" enumval=0
+    S1 = 0,
+    //% block="平均血氧" enumval=1
+    SVG = 1,
+    }
 
 using namespace pxt;
 
