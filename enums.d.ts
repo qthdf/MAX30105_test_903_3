@@ -18,7 +18,7 @@
 
     declare const enum LEDToRead {
     //% block="红光" enumval=1
-     Red = 1,
+    Red = 1,
     //% block="红外线" enumval=2
     Infrared = 2,
     }
@@ -30,9 +30,8 @@
     //% block="平均心率" enumval=1
     AVG = 1,
     }
-    
-    
-    
+
+
     declare const enum Spo2Type {
     //% block="瞬时血氧" enumval=0
     SMP = 0,

@@ -66,7 +66,7 @@ namespace Microbit {
 	uint32_t irBuffer[100]; //infrared LED sensor data
 	uint32_t redBuffer[100];  //red LED sensor data
 	int32_t bufferLength; //data length
-	int32_t spo2_value; //SPO2 value
+	int8_t spo2_value; //SPO2 value
 	int8_t validSPO2; //indicator to show if the SPO2 calculation is valid
 	int32_t heartRate; //heart rate value
 	int8_t validHeartRate; //indicator to show if the heart rate calculation is valid
