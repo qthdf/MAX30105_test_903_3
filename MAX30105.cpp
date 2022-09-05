@@ -900,9 +900,9 @@ class MAX30105 {
 
 
 
- void maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint16_t *pun_red_buffer, int8_t *pn_spo2, int8_t *pch_spo2_valid, 
-                int8_t *pn_heart_rate, int8_t *pch_hr_valid)
-}
+void maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint16_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid, 
+                int32_t *pn_heart_rate, int8_t *pch_hr_valid)
+
 
 /**
 * \brief        Calculate the heart rate and SpO2 level
@@ -989,8 +989,10 @@ class MAX30105 {
   n_ratio_average =0; 
   n_i_ratio_count = 0; 
   for(k=0; k< 5; k++) an_ratio[k]=0;
-  for (k=0; k< n_exact_ir_valley_locs_count; k++){
-    if (an_ir_valley_locs[k] > BUFFER_SIZE ){
+  for (k=0; k< n_exact_ir_valley_locs_count; k++)
+  {
+    if (an_ir_valley_locs[k] > BUFFER_SIZE )
+    {
       *pn_spo2 =  -999 ; // do not use SPO2 since valley loc is out of range
       *pch_spo2_valid  = 0; 
       return;
@@ -1001,11 +1003,13 @@ class MAX30105 {
   for (k=0; k< n_exact_ir_valley_locs_count-1; k++){
     n_y_dc_max= -16777216 ; 
     n_x_dc_max= -16777216; 
-    if (an_ir_valley_locs[k+1]-an_ir_valley_locs[k] >3){
-        for (i=an_ir_valley_locs[k]; i< an_ir_valley_locs[k+1]; i++){
-          if (an_x[i]> n_x_dc_max) {n_x_dc_max =an_x[i]; n_x_dc_max_idx=i;}
-          if (an_y[i]> n_y_dc_max) {n_y_dc_max =an_y[i]; n_y_dc_max_idx=i;}
-      }
+    if (an_ir_valley_locs[k+1]-an_ir_valley_locs[k] >3)
+    {
+      for (i=an_ir_valley_locs[k]; i< an_ir_valley_locs[k+1]; i++)
+      {
+        if (an_x[i]> n_x_dc_max) {n_x_dc_max =an_x[i]; n_x_dc_max_idx=i;}
+        if (an_y[i]> n_y_dc_max) {n_y_dc_max =an_y[i]; n_y_dc_max_idx=i;}
+     }
       n_y_ac= (an_y[an_ir_valley_locs[k+1]] - an_y[an_ir_valley_locs[k] ] )*(n_y_dc_max_idx -an_ir_valley_locs[k]); //red
       n_y_ac=  an_y[an_ir_valley_locs[k]] + n_y_ac/ (an_ir_valley_locs[k+1] - an_ir_valley_locs[k])  ; 
       n_y_ac=  an_y[n_y_dc_max_idx] - n_y_ac;    // subracting linear DC compoenents from raw 
@@ -1042,4 +1046,4 @@ class MAX30105 {
 }
 
 
-}
+
